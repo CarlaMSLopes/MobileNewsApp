@@ -1,1 +1,20 @@
 
+@import "../../theme/variables.scss";
+.bar{
+   &__tab{
+    background-color: $primary-color;
+   }
+   
+}
+.tabBtn{
+    
+background-color: $primary-color;
+color: $base-color;
+&__label{
+    font-size: 16px;
+    font-weight: 200;
+    
+}
+
+}
+

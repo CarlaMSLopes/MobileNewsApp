@@ -5,7 +5,17 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  }
+  },
+
+  {
+    path: 'details/:id', // Rota de detalhes no nível global
+    loadChildren: () =>
+      import('./details/details.module').then(m => m.DetailsPageModule),
+  },
+ 
+
+  
+
 ];
 @NgModule({
   imports: [
@@ -13,4 +23,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

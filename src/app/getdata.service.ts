@@ -9,14 +9,11 @@ export class GetdataService {
 
   constructor() { }
 
-
-   doGet = () => {
+  // Modificando o método doGet para aceitar um parâmetro 'q'
+  doGet(q: string) {
     const options = {
-      url: 'https://newsapi.org/v2/everything?q=ukraine&sortBy=publishedAt&apiKey=9f5d4ef1ea5b44c9bf855efbe62b9fdb',
-      //headers: { 'X-Fake-Header': 'Max was here' },
-      //params: { size: 'XL' },
+      url: `https://newsapi.org/v2/everything?q=${q}&sortBy=publishedAt&language=pt&apiKey=9f5d4ef1ea5b44c9bf855efbe62b9fdb`,
     };
-
-    return from(Http.get(options))
-  };
+    return from(Http.get(options));
+  }
 }

@@ -1,0 +1,94 @@
+@import "../../theme/variables.scss";
+ion-header::part(header) {
+  background-color: #f7f7f8;
+}
+.header-md {
+  background: #f7f7f8 !important; /* Sobrescreve a cor */
+  box-shadow: none !important; /* Remove as sombras */
+}
+
+.header {
+  --background: #f7f7f8;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__toolbar {
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    --background: #f7f7f8;
+    --color: black;
+  }
+
+  &__icon {
+    font-size: 30px;
+  }
+
+  &__navbar {
+    background-color: $base-color;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-list {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+      padding: 0;
+    }
+
+    &-item {
+      color: darken($base-gray, 50);
+      cursor: pointer;
+    }
+  }
+}
+
+.card {
+  
+  align-items: start;
+  padding: 0;
+  box-shadow: none;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 45px;
+  justify-content: space-between;
+  &__img {
+    width: 77px;
+    height: 66px;
+  }
+  &__header {
+    padding: 0;
+  }
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: $text-color;
+    max-width: 230px;
+  }
+  &__subtitle {
+    font-size: 12px;
+    color: $base-gray;
+    max-width: 230px;
+  }
+}
+
+.header__navbar-item {
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.header__navbar-item.active {
+  font-size: 16px;
+  /* Cor de fundo do item ativo */
+  color: $primary-color; /* Cor do texto no item ativo */
+  font-weight: bold; /* Deixar o texto em negrito */
+  border-bottom: solid 2px $primary-color;
+}

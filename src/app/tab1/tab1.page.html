@@ -1,21 +1,58 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      NewsApp
-    </ion-title>
+<ion-header class="header">
+  <ion-toolbar class="header__toolbar">
+    <ion-icon
+      class="header__icon"
+      src="../../assets/ApplePodcastsLogo.svg"
+    ></ion-icon>
+
+    <ion-icon slot="end" class="header__icon" name="search-outline"></ion-icon>
   </ion-toolbar>
+  <nav class="header__navbar">
+    <ul class="header__navbar-list">
+      <li
+        class="header__navbar-item"
+        (click)="onCategoryChange('brazil')"
+        [ngClass]="{'active': activeButton === 'brazil'}"
+      >
+        Hoje
+      </li>
+      <li
+        class="header__navbar-item"
+        (click)="onCategoryChange('world')"
+        [ngClass]="{'active': activeButton === 'world'}"
+      >
+        Mundo
+      </li>
+      <li
+        class="header__navbar-item"
+        (click)="onCategoryChange('technology')"
+        [ngClass]="{'active': activeButton === 'technology'}"
+      >
+        Tecnologia
+      </li>
+      <li
+        class="header__navbar-item"
+        (click)="onCategoryChange('games')"
+        [ngClass]="{'active': activeButton === 'games'}"
+      >
+        Games
+      </li>
+    </ul>
+  </nav>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-card *ngFor="let article of data">
-    <img [src]="article.urlToImage">
-    <ion-card-header>
-      <ion-card-title>{{article.title}}</ion-card-title>
-      <ion-card-subtitle>{{article.author}} - {{article.publishedAt}}</ion-card-subtitle>
+<ion-content class="content" [fullscreen]="true">
+  <ion-card
+    class="card"
+    *ngFor="let article of data"
+    (click)="navigateToDetails(article.id)"
+  >
+    <img class="card__img" [src]="article.urlToImage" />
+    <ion-card-header class="card__header">
+      <ion-card-title class="card__title">{{ article.title }}</ion-card-title>
+      <ion-card-subtitle class="card__subtitle">
+        {{ article.author }} - {{ article.publishedAt }}
+      </ion-card-subtitle>
     </ion-card-header>
-  
-    <ion-card-content>
-      {{article.description}}
-    </ion-card-content>
   </ion-card>
 </ion-content>

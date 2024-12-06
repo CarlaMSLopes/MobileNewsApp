@@ -1,0 +1,41 @@
+<ion-header class="header">
+  <ion-toolbar class="header__toolbar">
+    <ion-icon
+      (click)="navigateToHome()"
+      class="header__icon"
+      name="chevron-back-outline"
+    ></ion-icon>
+
+    <ion-icon
+      slot="end"
+      class="header__icon"
+      [name]="isSaved ? 'bookmark' : 'bookmark-outline'"
+      (click)="saveArticle(article)"
+    ></ion-icon>
+    <ion-icon
+      slot="end"
+      class="header__icon"
+      name="share-social-outline"
+    ></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="article">
+  <main class="main">
+    <h1 class="main__title">{{ article.title }}</h1>
+    <div class="main__details">
+      <p class="main__author">
+        {{ article.author }} - {{ article.publishedAt }}
+      </p>
+    </div>
+
+    <img class="main__img" [src]="article.urlToImage" alt="Imagem do Artigo" />
+
+    <p class="main__description">{{ article.description }}</p>
+
+    <a [href]="article.url" target="_blank" class="main__link">
+      Ver a notícia completa
+    </a>
+    <p class="main__font">{{ article.source.name }}</p>
+  </main>
+</ion-content>

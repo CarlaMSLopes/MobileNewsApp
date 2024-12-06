@@ -1,0 +1,38 @@
+@import "../../theme/variables.scss";
+
+.card {
+  align-items: start;
+  padding: 0;
+  box-shadow: none;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-bottom: 45px;
+  &__img {
+    width: 77px;
+    height: 66px;
+  }
+  &__icon {
+    font-size: 33px;
+    width: 33px;
+    color: lighten($text-color, 18);
+    // position: absolute;  // Faz o ícone se posicionar sobre a imagem
+    // top: 0px;  // Ajuste a distância do topo conforme necessário
+    // right: 0px;  // Ajuste a distância da esquerda conforme necessário
+    // z-index: 10;  // Garante que o ícone fique sobre a imagem
+  }
+  &__header {
+    padding: 0;
+  }
+  &__title {
+    font-size: 16px;
+    max-width: 230px;
+    font-weight: 600;
+    color: $text-color;
+  }
+  &__subtitle {
+    font-size: 12px;
+    color: $base-gray;
+  }
+}
